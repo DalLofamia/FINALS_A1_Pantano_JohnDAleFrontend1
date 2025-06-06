@@ -1,38 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap');
+
+body {
+  background-image: url('resturant.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  font-family: 'Open Sans', Arial, sans-serif;
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 30px 40px;
+  
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #2c1810;
   text-align: center;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #1a0f08;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  text-shadow: 
+    2px 2px 4px rgba(255, 255, 255, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  background: rgba(201, 155, 86, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 155, 86, 0.3);
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  user-select: none;
+  max-width: 720px;
+  margin: 0 auto 30px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-button {
+  color: #1a0f08;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu-button:focus {
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  background: rgba(254, 246, 228, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  width: 180px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+  cursor: pointer;
+  color: #1a0f08;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.25s ease;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-menu li:hover,
+.dropdown-menu li:focus {
+  background: rgba(201, 155, 86, 0.3);
+  color: #0d0704;
+  outline: none;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+input[type="text"] {
+  width: 320px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: 2px solid rgba(201, 155, 86, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1a0f08;
+  transition: all 0.3s ease;
+  box-shadow: 
+    inset 2px 2px 8px rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #8b5e1f;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-color: rgba(123, 79, 0, 0.6);
+  outline: none;
+  box-shadow: 
+    0 0 16px rgba(255, 255, 255, 0.4),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
+  color: #0d0704;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(145deg, rgba(184, 134, 11, 0.8), rgba(123, 79, 0, 0.8));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 16px rgba(123, 79, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(145deg, rgba(123, 79, 0, 0.9), rgba(184, 134, 11, 0.9));
+  box-shadow:
+    0 8px 20px rgba(123, 79, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.recipe-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 25px;
+  text-align: left;
+  list-style-type: decimal;
+  color: #1a0f08;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.recipe-list li {
+  margin-bottom: 12px;
+  border-left: 4px solid rgba(201, 155, 86, 0.6);
+  padding-left: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 6px;
+  box-shadow: 
+    inset 1px 1px 4px rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.recipe-list strong {
+  color: #0d0704;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.error {
+  color: #a01500;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 25px;
+  font-style: italic;
+  text-shadow: 
+    1px 1px 2px rgba(255, 255, 255, 0.6),
+    1px 1px 1px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+
+.image-container {
+  margin: 30px auto 45px auto;
+  max-width: 340px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(201, 155, 86, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+  transition: transform 0.4s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  cursor: zoom-in;
+}
+.dish-name {
+  text-align: center;
+  color: #333;
+  margin: 20px 0 10px 0;
+  font-size: 1.8em;
 }
